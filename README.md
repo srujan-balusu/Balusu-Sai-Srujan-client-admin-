@@ -1,1 +1,7 @@
-# Balusu-Sai-Srujan-client-admin-
+The app begins with a login page where existing users can enter their credentials to access the system. If a user does not  have an account, they are directed to a registration page. During the registration , the user must provide their name, email, password, phone number, and specify their role as either a client or an admin through an enum selection. I implemented email uniqueness validation to ensure that no two users can register with the same email address, maintaining the integrity of the database and simplifying user authentication.
+
+When a user attempts to log in, the system verifies their credentials based on the provided email. After successful authentication, the application determines the user’s role and routes them accordingly — admins are directed to the admin dashboard, and clients are directed to the client dashboard. On the admin page, the admin has the ability to view all to-do lists that have been created and stored within the MongoDB database.
+
+On the other hand, when a client logs in, they are able to see their own to-do lists and are also given the functionality to create new to-do list entries. All information, including user details and to-do list data, is securely stored in MongoDB, ensuring reliable and scalable data management.
+
+To prioritize user security, I integrated bcrypt for password hashing. Every password is hashed before being stored, Furthermore, I implemented salting along with hashing to add an additional layer of protection. Salting ensures that even if two users have the same password, their stored hashes are completely different, making it more protected.
